@@ -110,7 +110,7 @@ def features():
 @app.route('/output')
 def output():
     """Serve the analysis output page."""
-    return "<h1>Test Page</h1>"
+    return render_template('about.html')
 
 @app.route('/api/generate-report', methods=['POST'])
 @cross_origin() # Ensure CORS is handled for this endpoint
