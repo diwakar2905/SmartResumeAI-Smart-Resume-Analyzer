@@ -1,5 +1,10 @@
+import os
+
 # Gunicorn configuration for Smart Resume Analyzer
-bind = "0.0.0.0:5001"
+# Bind to the port specified by the PORT environment variable, defaulting to 5001 for local development.
+# This is crucial for platforms like Railway and Render.
+port = os.environ.get("PORT", "5001")
+bind = f"0.0.0.0:{port}"
 workers = 4
 worker_class = "sync"
 worker_connections = 1000
