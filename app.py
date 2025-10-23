@@ -29,7 +29,11 @@ logger = logging.getLogger(__name__)
 
 # Initialize the Flask App - Flask app ko initialize karte hain
 app = Flask(__name__, template_folder='templates', static_folder='static')
-CORS(app, resources={r"/*": {"origins": "*"}})
+
+# Configure CORS from environment variables for production security
+CORS_ORIGINS = os.environ.get('CORS_ORIGINS', '*') # Default to '*' for local dev
+CORS(app, resources={r"/*": {"origins": CORS_ORIGINS.split(',')}})
+logger.info(f"CORS configured for origins: {CORS_ORIGINS}")
 
 # Configuration - App ki configuration set karte hain
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16MB max file size - Maximum file size 16MB

@@ -1,29 +1,19 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
 
-    # Environment
-    .env
-    
-    # Python
-    __pycache__/
-    *.pyc
-    *.pyo
-    *.pyd
-    venv/
-    
-    # IDE / Editor
-    .vscode/
-    .idea/
-    
-    # Temporary Files
-    temp_uploads/
-    *.log
-    app.log
-    logs/
-    
-    # OS generated files
-    .DS_Store
-    Thumbs.db
-    
-    # Deployment artifacts (we created these but don't need them in git)
-    delete_files.bat
-    delete_files.sh
-    
+# Virtual environment
+venv/
+
+# Environment variables
+.env
+
+# Temporary and log files
+temp_uploads/
+logs/
+*.log
+
+# OS-generated files
+.DS_Store

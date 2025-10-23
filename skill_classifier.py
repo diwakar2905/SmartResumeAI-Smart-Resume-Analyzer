@@ -6,9 +6,9 @@ from collections import defaultdict
 
 # --- Load skills.json --- skills.json ko load karte hain
 # Construct an absolute path to skills.json, assuming it's in the project root.
-_CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
-_BACKEND_ROOT = os.path.dirname(_CURRENT_DIR) # Go up one level to the backend root
-_SKILLS_FILE = os.path.join(_BACKEND_ROOT, 'data', 'skills.json')
+_CURRENT_DIR = os.path.dirname(os.path.abspath(__file__)) # utils directory
+_PROJECT_ROOT = os.path.dirname(_CURRENT_DIR) # Project root
+_SKILLS_FILE = os.path.join(_PROJECT_ROOT, 'data', 'skills.json')
 
 try:
     with open(_SKILLS_FILE, 'r', encoding='utf-8') as f:
