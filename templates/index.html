@@ -265,6 +265,9 @@
     </footer>
 
     <script>
+        // The backend URL from your Railway deployment
+        const BACKEND_BASE_URL = "https://web-production-52705.up.railway.app";
+
         // --- Theme Toggle ---
         const themeToggle = document.getElementById('theme-toggle');
         const html = document.documentElement;
@@ -369,7 +372,7 @@
             formData.append('resume_file', selectedFile);
 
             try {
-                const response = await fetch('/analyze', {
+                const response = await fetch(`${BACKEND_BASE_URL}/analyze`, {
                     method: 'POST',
                     body: formData,
                 });
